@@ -1,0 +1,126 @@
+@font-face {
+    font-family: londrina;
+    src: url(LondrinaShadow-Regular.ttf);
+}
+#name{
+    position: absolute; 
+    text-align: center;
+    top:40%;  
+    margin-left: auto; 
+    margin-right: auto; 
+    left: 0; 
+    right: 0; 
+    font-size: 100px; 
+    font-family: londrina;
+    z-index: 1;
+}
+body{
+    width: 100%
+}
+
+#zoom:hover{
+    transform: scale(1.5);
+}
+#underline:hover{
+    text-decoration: underline rgb(109, 188, 215);
+}
+
+
+.card{
+    /* width: 25%;
+    height: 25%;
+    transition: transform .2s; */
+    background-color: var(--bs-dark-800);
+    border: var(--bs-gray-800);
+    /* display: inline; */
+}
+
+/*imgpopup css*/
+/* 
+.card img {
+    width: 180px;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2000ms;
+  }
+  .card:hover img {
+    opacity: 1;
+    z-index: 1;
+  } */
+
+/*imgpopup css end*/
+
+#main{
+    display: none;
+}
+
+#ani {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bs-gray-800);
+    overflow: hidden;
+}
+
+.loader {
+    width: 10em;
+    height: 10em;
+    font-size: 25px;
+    box-sizing: border-box;
+    border-top: 0.3em solid hotpink;
+    border-radius: 50%;
+    position: relative;
+    animation: rotating 2s ease-in-out infinite;
+    --direction: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bs-gray-800);
+    display: flex;
+    
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    box-sizing: border-box;
+    top: -0.2em;
+}
+
+.loader::before {
+    border-top: 0.3em solid dodgerblue;
+    transform: rotate(120deg);
+}
+
+.loader::after {
+    border-top: 0.3em solid gold;
+    transform: rotate(240deg);
+}
+
+.loader span {
+    position: absolute;
+    color: white;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    line-height: 10em;
+    font-family: sans-serif;
+    animation: rotating 2s linear infinite;
+    --direction: -1;
+}
+
+@keyframes rotating {
+    50% {
+        transform: rotate(calc(180deg * var(--direction)));
+    }
+
+    100% {
+        transform: rotate(calc(360deg * var(--direction)));
+    }
+}
